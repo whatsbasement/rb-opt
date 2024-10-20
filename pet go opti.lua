@@ -1,10 +1,10 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local workspace = game:GetService("Workspace")
-local Root = ReplicatedStorage["__DIRECTORY"].Upgrades.Root
 local Library = ReplicatedStorage:WaitForChild("Library")
 local Client = Library.Client
 local network = ReplicatedStorage.Network
 local LocalPlayer = game.Players.LocalPlayer
+local localPlayerName = LocalPlayer.Name
 
 
 local function fullOptimizer()
