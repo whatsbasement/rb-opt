@@ -1197,7 +1197,7 @@ local function activateGui()
     end
 end
 
--- activateGui()
+activateGui()
 
 -- ===============================================  GUI  ===============================================
 
