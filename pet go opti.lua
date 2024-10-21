@@ -1,3 +1,4 @@
+task.spawn(function()
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local workspace = game:GetService("Workspace")
 local Library = ReplicatedStorage:WaitForChild("Library")
@@ -9,6 +10,12 @@ local localPlayerName = LocalPlayer.Name
 
 local function fullOptimizer()
     -- turn off settings
+    -- Delete/Disable scripts
+    for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerGui:GetChildren()) do
+        if v.Enabled then
+            v.Enabled = false
+        end
+    end
 
     local settingsCmds = require(Client.SettingsCmds)
 
@@ -95,14 +102,6 @@ local function fullOptimizer()
 
     for _, v in pairs(game:GetDescendants()) do
         clearTextures(v)
-    end
-
-
-    -- Delete/Disable scripts
-    for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerGui:GetChildren()) do
-        if v.Enabled then
-            v.Enabled = false
-        end
     end
     
     -- leave Breakables Frontend, Flying Gifts, Hidden Gifts and Relics
@@ -246,3 +245,4 @@ end
 
 
 fullOptimizer()
+end)
