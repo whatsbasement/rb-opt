@@ -11,9 +11,7 @@ local function fullOptimizer()
     -- turn off settings
     -- Delete/Disable scripts
     for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerGui:GetChildren()) do
-        if v.Enabled then
-            v.Enabled = false
-        end
+        v:Destroy()
     end
 
     local settingsCmds = require(Client.SettingsCmds)
