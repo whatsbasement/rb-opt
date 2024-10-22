@@ -182,11 +182,11 @@ local function fullOptimizer()
         end)
     end
 
-    for _, v in pairs(workspace:GetDescendants()) do
-        if v:IsA("Part") or v:IsA("BasePart") then
-            v.Transparency = 1
-        end
-    end
+    -- for _, v in pairs(workspace:GetDescendants()) do
+    --     if v:IsA("Part") or v:IsA("BasePart") then
+    --         v.Transparency = 1
+    --     end
+    -- end
 
 
     -- workspace.DescendantAdded:Connect(function(v)
@@ -195,8 +195,8 @@ local function fullOptimizer()
 
 
     -- Lower FOV and Set Camera to First-Person
-    game.Workspace.CurrentCamera.FieldOfView = 1
-    LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
+    -- game.Workspace.CurrentCamera.FieldOfView = 1
+    -- LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
 
     -- Disable Particle Effects
     for _, v in pairs(game.Workspace:GetDescendants()) do
