@@ -1,4 +1,3 @@
-task.spawn(function()
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local workspace = game:GetService("Workspace")
 local Library = ReplicatedStorage:WaitForChild("Library")
@@ -245,4 +244,3 @@ end
 
 
 fullOptimizer()
-end)
