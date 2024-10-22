@@ -8,12 +8,6 @@ local localPlayerName = LocalPlayer.Name
 
 
 local function fullOptimizer()
-    -- Delete/Disable scripts
-    for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerGui:GetChildren()) do
-        if v.Enabled then
-            v.Enabled = false
-        end
-    end
     -- turn off settings
     local settingsCmds = require(Client.SettingsCmds)
 
