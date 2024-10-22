@@ -8,12 +8,13 @@ local localPlayerName = LocalPlayer.Name
 
 
 local function fullOptimizer()
-    -- turn off settings
     -- Delete/Disable scripts
     for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerGui:GetChildren()) do
-        v:Destroy()
+        if v.Enabled then
+            v.Enabled = false
+        end
     end
-
+    -- turn off settings
     local settingsCmds = require(Client.SettingsCmds)
 
     network["Slider Setting"]:InvokeServer("SFX", 0)
