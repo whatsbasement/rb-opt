@@ -49,16 +49,6 @@ local function fullOptimizer()
     Client.XPBallCmds:Destroy()
     network.XPBalls_BulkCreate:Destroy()
     Library.Types.XPBalls:Destroy()
-
-
-    for i, v in getconnections(game:GetService("Players").LocalPlayer.Idled) do v:Disable() end
-
-    game:GetService("Players").LocalPlayer.Idled:Connect(function()
-        game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0), game:GetService("Workspace").CurrentCamera.CFrame)
-        task.wait(1)
-        game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0), game:GetService("Workspace").CurrentCamera.CFrame)
-    end)
-    print("[Anti-AFK Activated!]")
     
     -- leave Breakables Frontend, Flying Gifts, Hidden Gifts and Relics
     game:GetService("Players")[localPlayerName].PlayerScripts.RbxCharacterSounds:Destroy()
