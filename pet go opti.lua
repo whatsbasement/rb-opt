@@ -73,7 +73,8 @@ task.spawn(function()
             end
         end
         
-    
+        game:GetService("Players").Sky:Destroy()
+        
         -- make player invis
         for _, v in pairs(game.Players:GetChildren()) do
             for _, v2 in pairs(v.Character:GetDescendants()) do
