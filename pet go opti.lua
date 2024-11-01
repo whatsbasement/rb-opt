@@ -40,7 +40,7 @@ task.spawn(function()
         end
     
         for _, v in workspace.MAP:GetChildren() do
-            if v.Name ~= "SPAWNS" and v.Name ~= "INTERACT" then
+            if v.Name ~= "SPAWNS" and v.Name ~= "INTERACT" and v.Name ~= "JuicerMachine" then
                 v:Destroy()
             end
         end
