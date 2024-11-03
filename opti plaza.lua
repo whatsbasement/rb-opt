@@ -69,13 +69,15 @@ task.spawn(function()
         end
                 
         -- make player invis
-        for _, v in pairs(game.Players:GetChildren()) do
-            for _, v2 in pairs(v.Character:GetDescendants()) do
-                if v2:IsA("BasePart") or v2:IsA("Decal") then
-                    v2.Transparency = 1
+        pcall(function()
+            for _, v in pairs(game.Players:GetChildren()) do
+                for _, v2 in pairs(v.Character:GetDescendants()) do
+                    if v2:IsA("BasePart") or v2:IsA("Decal") then
+                        v2.Transparency = 1
+                    end
                 end
             end
-        end
+        end)
     
         -- make pets letter invis
         for _, v in pairs(workspace.__THINGS.Pets:GetDescendants()) do
