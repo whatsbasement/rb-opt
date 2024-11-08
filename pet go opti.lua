@@ -68,7 +68,7 @@ task.spawn(function()
         end
     
         for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts.Game:GetChildren()) do
-            if v.Name ~= "Breakables Frontend" and v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Fishing" and v.Name ~= "Loot Chests" then
+            if v.Name ~= "Breakables Frontend" and v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Fishing" and v.Name ~= "Loot Chest" then
                 v:Destroy()
             end
         end
