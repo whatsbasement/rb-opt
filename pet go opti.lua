@@ -39,34 +39,12 @@ task.spawn(function()
             end
         end
     
-        for _, v in workspace.MAP:GetChildren() do
-            if v.Name ~= "SPAWNS" and v.Name ~= "INTERACT" then
-                v:Destroy()
-            end
-        end
-    
         -- disable annoying xp balls
         Client.XPBallCmds:Destroy()
         network.XPBalls_BulkCreate:Destroy()
         Library.Types.XPBalls:Destroy()
         
         -- leave Breakables Frontend, Flying Gifts, Hidden Gifts and Relics
-        game:GetService("Players")[localPlayerName].PlayerScripts.RbxCharacterSounds:Destroy()
-        task.wait(0.5)
-        game:GetService("Players")[localPlayerName].PlayerScripts.PlayerModule:Destroy()
-        
-        for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts:GetChildren()) do  -- avoid Scripts
-            if v.Name ~= "Scripts" then
-                v:Destroy()
-            end
-        end
-        
-        for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts:GetChildren()) do
-            if v.Name ~= "Game" then
-                v:Destroy()
-            end
-        end
-    
         for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts.Game:GetChildren()) do
             if v.Name ~= "Breakables Frontend" and v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Fishing" and v.Name ~= "Loot Chest" then
                 v:Destroy()
@@ -79,19 +57,6 @@ task.spawn(function()
                 if v2:IsA("BasePart") or v2:IsA("Decal") then
                     v2.Transparency = 1
                 end
-            end
-        end
-    
-        -- make pets letter invis
-        for _, v in pairs(workspace.__THINGS.Pets:GetDescendants()) do
-            if v.Name == "PetBillboard" then
-                v.Enabled = false
-            end
-        end
-    
-        for _, v in pairs(workspace.MAP.INTERACT:GetChildren()) do
-            if v.Name ~= "Machines" and v.Name ~= "Items" and v.Name ~= "JuicerMachine" and v.Name ~= "FishingPads" then
-                v:Destroy()
             end
         end
     
