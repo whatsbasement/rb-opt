@@ -1,4 +1,5 @@
 task.spawn(function()
+    local x, y = pcall(function()
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local workspace = game:GetService("Workspace")
     local Library = ReplicatedStorage:WaitForChild("Library")
@@ -155,4 +156,6 @@ task.spawn(function()
     
     fullOptimizer()
     print("Full optimizer completed")
+    end)
+    print(x, y)
 end)
