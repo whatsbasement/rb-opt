@@ -137,8 +137,13 @@ task.spawn(function()
         end
     
         -- Lower FOV and Set Camera to First-Person
-        game.Workspace.CurrentCamera.FieldOfView = 1
+        local player = game.Players.LocalPlayer
+        local camera = game.Workspace.CurrentCamera
+
+        camera.FieldOfView = 1
         LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
+        camera.CameraType = Enum.CameraType.Scriptable
+        camera.CFrame = CFrame.new(0, 10, 0)
     
         -- Disable Particle Effects
         for _, v in pairs(game.Workspace:GetDescendants()) do
