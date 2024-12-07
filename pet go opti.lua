@@ -41,16 +41,20 @@ task.spawn(function()
         end
     
         -- disable annoying xp balls
-        Client.XPBallCmds:Destroy()
-        network.XPBalls_BulkCreate:Destroy()
-        Library.Types.XPBalls:Destroy()
+        pcall(function()
+            Client.XPBallCmds:Destroy()
+            network.XPBalls_BulkCreate:Destroy()
+            Library.Types.XPBalls:Destroy()
+        end)
         
-        -- leave Breakables Frontend, Flying Gifts, Hidden Gifts and Relics
-        for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts.Game:GetChildren()) do
-            if v.Name ~= "Breakables Frontend" and v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Fishing" and v.Name ~= "Loot Chest" then
-                v:Destroy()
+        pcall(function()
+            -- leave Breakables Frontend, Flying Gifts, Hidden Gifts and Relics
+            for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts.Game:GetChildren()) do
+                if v.Name ~= "Breakables Frontend" and v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Fishing" and v.Name ~= "Loot Chest" then
+                    v:Destroy()
+                end
             end
-        end
+        end)
                 
         -- make player invis
         for _, v in pairs(game.Players:GetChildren()) do
@@ -61,8 +65,10 @@ task.spawn(function()
             end
         end
     
-        hookfunction(getsenv(LocalPlayer.PlayerScripts.Scripts.Game["Breakables Frontend"]).updateBreakable, function()
-            return
+        pcall(function()
+            hookfunction(getsenv(LocalPlayer.PlayerScripts.Scripts.Game["Breakables Frontend"]).updateBreakable, function()
+                return
+            end)
         end)
     
         hookfunction(require(Client.WorldFX).RewardBillboard, function()
