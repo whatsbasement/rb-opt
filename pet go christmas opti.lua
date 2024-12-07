@@ -48,10 +48,7 @@ task.spawn(function()
                 end
             end
         end
-    
-        hookfunction(getsenv(LocalPlayer.PlayerScripts.Scripts.Game["Breakables Frontend"]).updateBreakable, function()
-            return
-        end)
+
     
         hookfunction(require(Client.WorldFX).RewardBillboard, function()
             return
