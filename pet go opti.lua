@@ -57,13 +57,13 @@ task.spawn(function()
         end)
                 
         -- make player invis
-        for _, v in pairs(game.Players:GetChildren()) do
-            for _, v2 in pairs(v.Character:GetDescendants()) do
-                if v2:IsA("BasePart") or v2:IsA("Decal") then
-                    v2.Transparency = 1
-                end
-            end
-        end
+        -- for _, v in pairs(game.Players:GetChildren()) do
+        --     for _, v2 in pairs(v.Character:GetDescendants()) do
+        --         if v2:IsA("BasePart") or v2:IsA("Decal") then
+        --             v2.Transparency = 1
+        --         end
+        --     end
+        -- end
     
         pcall(function()
             hookfunction(getsenv(LocalPlayer.PlayerScripts.Scripts.Game["Breakables Frontend"]).updateBreakable, function()
@@ -112,10 +112,10 @@ task.spawn(function()
         local player = game.Players.LocalPlayer
         local camera = game.Workspace.CurrentCamera
 
-        camera.FieldOfView = 1
-        LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
-        camera.CameraType = Enum.CameraType.Scriptable
-        camera.CFrame = CFrame.new(0, 10, 0)
+        -- camera.FieldOfView = 1
+        -- LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
+        -- camera.CameraType = Enum.CameraType.Scriptable
+        -- camera.CFrame = CFrame.new(0, 10, 0)
     
         -- Disable Particle Effects
         for _, v in pairs(game.Workspace:GetDescendants()) do
