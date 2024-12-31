@@ -112,10 +112,10 @@ task.spawn(function()
         local player = game.Players.LocalPlayer
         local camera = game.Workspace.CurrentCamera
 
-        camera.FieldOfView = 1
-        LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
-        camera.CameraType = Enum.CameraType.Scriptable
-        camera.CFrame = CFrame.new(0, 10, 0)
+        -- camera.FieldOfView = 1
+        -- LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
+        -- camera.CameraType = Enum.CameraType.Scriptable
+        -- camera.CFrame = CFrame.new(0, 10, 0)
     
         -- Disable Particle Effects
         for _, v in pairs(game.Workspace:GetDescendants()) do
