@@ -87,11 +87,11 @@ task.spawn(function()
             return
         end)
     
-        for _, v in pairs(ReplicatedStorage.Assets:GetChildren()) do
-            if v.Name ~= "Cutscenes" and v.Name ~= "Particles" and v.Name ~= "UI" and v.Name ~= "Models" and v.Name ~= "Tycoons" then
-                v:Destroy()
-            end    
-        end
+        -- for _, v in pairs(ReplicatedStorage.Assets:GetChildren()) do
+        --     if v.Name ~= "Cutscenes" and v.Name ~= "Particles" and v.Name ~= "UI" and v.Name ~= "Models" and v.Name ~= "Tycoons" then
+        --         v:Destroy()
+        --     end    
+        -- end
     
         local worldFXList = {"Confetti", "RewardImage", "QuestGlow", "Damage", "SpinningChests", "RewardItem", "Sparkles", "AnimatePad", "PlayerTeleport", "AnimateChest", "Poof",
         "SmallPuff", "Flash", "Arrow3D", "ArrowPointer3D", "RainbowGlow"}
