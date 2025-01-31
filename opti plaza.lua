@@ -44,38 +44,6 @@ task.spawn(function()
                 v:Destroy()
             end
         end
-        
-        for _, v in pairs(game:GetService("Players"):GetChildren()) do
-            if v.Name ~= localPlayerName then
-                v:Destroy()
-            else
-                for _, v1 in pairs(v:GetChildren()) do
-                    if v1.Name == "PlayerScripts" then
-                        for _, v2 in pairs(v1:GetChildren()) do
-                            if v2.Name ~= "Scripts" then
-                                v2:Destroy()
-
-                            elseif v2.Name == "Scripts" then
-                                for _, v3 in pairs(v2:GetChildren()) do
-                                    if v3.Name == "Game" then
-                                        for _, v4 in pairs(v3:GetChildren()) do
-                                            if v4.Name ~= "Hoverboards" and v4.Name ~= "Trading Plaza" then
-                                                v4:Destroy()
-                                            end
-                                        end
-                                    else
-                                        v3:Destroy()
-                                    end
-                                end
-                            end
-                        end
-                    
-                    elseif v1.Name == "PlayerGui" then
-                        v1:ClearAllChildren()
-                    end
-                end
-            end
-        end
                 
         -- make player invis
         pcall(function()
