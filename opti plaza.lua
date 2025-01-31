@@ -38,33 +38,42 @@ task.spawn(function()
                 network["Toggle Setting"]:InvokeServer(settingNames)
             end
         end
-    
-        for _, v in workspace.TRADING:GetChildren() do
-            if v.Name ~= "SPAWNS" then
+
+        for _, v in pairs(workspace:GetChildren()) do
+            if v.Name ~= "TRADING" and v.Name ~= localPlayerName and v.Name ~= "Terrain" and v.Name ~= "Camera" and v.Name ~= "Part" then
                 v:Destroy()
             end
         end
         
-        -- leave Breakables Frontend, Flying Gifts, Hidden Gifts and Relics
-        game:GetService("Players")[localPlayerName].PlayerScripts.RbxCharacterSounds:Destroy()
-        task.wait(0.5)
-        game:GetService("Players")[localPlayerName].PlayerScripts.PlayerModule:Destroy()
-        
-        for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts:GetChildren()) do  -- avoid Scripts
-            if v.Name ~= "Scripts" then
+        for _, v in pairs(game:GetService("Players"):GetChildren()) do
+            if v.Name ~= localPlayerName then
                 v:Destroy()
-            end
-        end
-        
-        for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts:GetChildren()) do
-            if v.Name ~= "Game" then
-                v:Destroy()
-            end
-        end
-    
-        for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts.Game:GetChildren()) do
-            if v.Name ~= "Trading Plaza" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" then
-                v:Destroy()
+            else
+                for _, v1 in pairs(v:GetChildren()) do
+                    if v1.Name == "PlayerScripts" then
+                        for _, v2 in pairs(v1:GetChildren()) do
+                            if v2.Name ~= "Scripts" then
+                                v2:Destroy()
+
+                            elseif v2.Name == "Scripts" then
+                                for _, v3 in pairs(v2:GetChildren()) do
+                                    if v3.Name == "Game" then
+                                        for _, v4 in pairs(v3:GetChildren()) do
+                                            if v4.Name ~= "Hoverboards" and v4.Name ~= "Trading Plaza" then
+                                                v4:Destroy()
+                                            end
+                                        end
+                                    else
+                                        v3:Destroy()
+                                    end
+                                end
+                            end
+                        end
+                    
+                    elseif v1.Name == "PlayerGui" then
+                        v1:ClearAllChildren()
+                    end
+                end
             end
         end
                 
@@ -78,13 +87,6 @@ task.spawn(function()
                 end
             end
         end)
-    
-        -- make pets letter invis
-        for _, v in pairs(workspace.__THINGS.Pets:GetDescendants()) do
-            if v.Name == "PetBillboard" then
-                v.Enabled = false
-            end
-        end
     
         hookfunction(require(Client.WorldFX).RewardBillboard, function()
             return
@@ -124,8 +126,8 @@ task.spawn(function()
         end
     
         -- Lower FOV and Set Camera to First-Person
-        game.Workspace.CurrentCamera.FieldOfView = 1
-        LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
+        -- game.Workspace.CurrentCamera.FieldOfView = 1
+        -- LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
     
         -- Disable Particle Effects
         for _, v in pairs(game.Workspace:GetDescendants()) do
