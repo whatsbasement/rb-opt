@@ -40,7 +40,13 @@ task.spawn(function()
         end
 
         for _, v in pairs(workspace:GetChildren()) do
-            if v.Name ~= "TRADING" and v.Name ~= localPlayerName and v.Name ~= "Terrain" and v.Name ~= "Camera" and v.Name ~= "Part" then
+            if v.Name == "TRADING" then
+                for _, v2 in pairs(v:GetChildren()) do
+                    if v2.Name ~= "SPAWNS" then
+                        v2:Destroy()
+                    end
+                end
+            elseif v.Name ~= localPlayerName and v.Name ~= "Terrain" and v.Name ~= "Camera" and v.Name ~= "Part" then
                 v:Destroy()
             end
         end
