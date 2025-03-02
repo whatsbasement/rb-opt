@@ -47,9 +47,9 @@ local x, y = pcall(function()
         end)
         
         pcall(function()
-            -- leave Breakables Frontend, Flying Gifts, Hidden Gifts and Relics
+            -- leave Flying Gifts, Hidden Gifts and Relics
             for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts.Game:GetChildren()) do
-                if v.Name ~= "Breakables Frontend" and v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Fishing" and v.Name ~= "Loot Chests" and v.Name ~= "Thieving" and v.Name ~= "ThievingVault" then
+                if v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Fishing" and v.Name ~= "Loot Chests" and v.Name ~= "Thieving" and v.Name ~= "ThievingVault" then
                     v:Destroy()
                 end
             end
@@ -63,12 +63,6 @@ local x, y = pcall(function()
                 end
             end
         end
-    
-        pcall(function()
-            hookfunction(getsenv(LocalPlayer.PlayerScripts.Scripts.Game["Breakables Frontend"]).updateBreakable, function()
-                return
-            end)
-        end)
     
         hookfunction(require(Client.WorldFX).RewardBillboard, function()
             return
@@ -108,13 +102,13 @@ local x, y = pcall(function()
         end
     
         -- Lower FOV and Set Camera to First-Person
-        local player = game.Players.LocalPlayer
-        local camera = game.Workspace.CurrentCamera
+        -- local player = game.Players.LocalPlayer
+        -- local camera = game.Workspace.CurrentCamera
     
-        camera.FieldOfView = 1
-        LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
-        camera.CameraType = Enum.CameraType.Scriptable
-        camera.CFrame = CFrame.new(0, 10, 0)
+        -- camera.FieldOfView = 1
+        -- LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
+        -- camera.CameraType = Enum.CameraType.Scriptable
+        -- camera.CFrame = CFrame.new(0, 10, 0)
     
         -- Disable Particle Effects
         for _, v in pairs(game.Workspace:GetDescendants()) do
