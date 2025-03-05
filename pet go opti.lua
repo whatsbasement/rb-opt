@@ -133,10 +133,10 @@ local x, y = pcall(function()
         end
     
         -- Disconnect Unnecessary Events
-        local connections = getconnections or get_signal_cons
-        for _, connection in pairs(connections(game:GetService("RunService").RenderStepped)) do
-            connection:Disable()
-        end
+        -- local connections = getconnections or get_signal_cons
+        -- for _, connection in pairs(connections(game:GetService("RunService").RenderStepped)) do
+        --     connection:Disable()
+        -- end
     
         local function setAllLightsToNoLight()
             for _, v in ipairs(game:GetDescendants()) do
