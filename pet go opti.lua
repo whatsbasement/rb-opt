@@ -155,5 +155,5 @@ task.spawn(function()
     
     
     fullOptimizer()
-    print("Full optimizer completed")
+    -- print("Full optimizer completed")
 end)
