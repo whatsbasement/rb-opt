@@ -50,7 +50,8 @@ task.spawn(function()
         pcall(function()
             -- leave Flying Gifts, Hidden Gifts and Relics
             for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts.Game:GetChildren()) do
-                if v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Fishing" and v.Name ~= "Loot Chests" and v.Name ~= "Thieving" and v.Name ~= "ThievingVault" then
+                if v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Breakable Frontend" and
+                v.Name ~= "Fishing" and v.Name ~= "Loot Chests" and v.Name ~= "Thieving" and v.Name ~= "ThievingVault" then
                     v:Destroy()
                 end
             end
