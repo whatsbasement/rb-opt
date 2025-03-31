@@ -48,12 +48,12 @@ task.spawn(function()
         end)
         
         pcall(function()
-            for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts.Game:GetChildren()) do
-                if v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Breakables Frontend" and v.Name ~= "Boating Frontend" and
-                v.Name ~= "Fishing" and v.Name ~= "Loot Chests" and v.Name ~= "Thieving" and v.Name ~= "ThievingVault" and v.Name ~= "Mining" and v.Name ~= "Pinata Boss" and v.Name ~= "Retention Gifts" then
-                    v:Destroy()
-                end
-            end
+            -- for _, v in pairs(game:GetService("Players")[localPlayerName].PlayerScripts.Scripts.Game:GetChildren()) do
+            --     if v.Name ~= "Flying Gifts" and v.Name ~= "Hidden Gifts" and v.Name ~= "Relics" and v.Name ~= "Hoverboards" and v.Name ~= "Breakables Frontend" and v.Name ~= "Boating Frontend" and
+            --     v.Name ~= "Fishing" and v.Name ~= "Loot Chests" and v.Name ~= "Thieving" and v.Name ~= "ThievingVault" and v.Name ~= "Mining" and v.Name ~= "Pinata Boss" and v.Name ~= "Retention Gifts" then
+            --         v:Destroy()
+            --     end
+            -- end
         end)
                 
         -- make player invis
