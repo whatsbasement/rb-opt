@@ -1,5 +1,5 @@
 task.spawn(function()
-    -- pcall(function() gethui():Destroy() end)
+    pcall(function() gethui():Destroy() end)
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local workspace = game:GetService("Workspace")
     local Library = ReplicatedStorage:WaitForChild("Library")
